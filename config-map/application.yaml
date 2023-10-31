@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test-cm
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: git@github.com:TobiasKohlerT/test.git
+    path: config-map/cm.yaml
+    targetRevision: main
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: my-namespace
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: false
