@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/TobiasKohlerT/test.git #git@github.com:TobiasKohlerT/test.git
-    path: config-map/cm.yaml
+    path: config-map
     targetRevision: main
   destination:
     server: 'https://kubernetes.default.svc'
